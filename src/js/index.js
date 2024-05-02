@@ -23,6 +23,8 @@ comenzarButton.addEventListener("click", () => {
   setTimeout(() => {
     iniciarTemporizador();
     nuevaPalabra();
+    ocultarPalabras();
+    mostrarInterfaz();
   }, cuentaAtras);
 
 });
@@ -82,5 +84,24 @@ function pintarCasillas() {
     contenedorCasillas.appendChild(filaCasillas);
 
   }
+
+}
+
+
+function ocultarPalabras() {
+  let casillasTablero = document.getElementsByClassName("casilla");
+
+  for (let index = 0; index < casillasTablero.length; index++) {
+    let casilla = casillasTablero[index];
+    let parrafos = casilla.getElementsByTagName("p");
+    parrafos[0].classList.remove("oculta");
+    parrafos[1].classList.add("oculta");
+  }
+
+}
+
+
+function mostrarInterfaz() {
+
 
 }
