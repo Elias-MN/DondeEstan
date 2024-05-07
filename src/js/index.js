@@ -80,6 +80,24 @@ function pintarCasillas() {
 
       casilla.addEventListener("click", (e) => {
         let seleccionada = palabra.innerText;
+        let hijos = e.target.childNodes;
+
+        if (seleccionada == adivinarElement.innerText) {
+          if (hijos.length == 2) {
+            // Cuando le damos al exterior de la casilla correcta
+            hijos[1].classList.remove("oculta");
+            hijos[0].classList.add("oculta");
+
+          } else {
+            // Cuando le damos al número de la casilla correcta
+            let padre = e.target.parentElement;
+            let parrafos = padre.getElementsByTagName("p");
+            parrafos[1].classList.remove("oculta");
+            parrafos[0].classList.add("oculta");
+          }
+        }
+
+
 
       });
 
