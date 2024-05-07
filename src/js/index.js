@@ -4,6 +4,7 @@ const comenzarButton = document.getElementById("comenzar");
 const segundosElement = document.getElementById("segundos");
 const adivinarElement = document.getElementById("adivinar");
 const contenedorCasillas = document.getElementById("palabras");
+const contenedorAcciones = document.getElementById("acciones");
 
 const segundosTotales = 75;
 const maxFilas = 3;
@@ -18,11 +19,11 @@ comenzarButton.addEventListener("click", () => {
   escenaJuego.classList.remove("oculta");
 
   segundosElement.innerHTML = segundosTotales;
+  nuevaPalabra();
   pintarCasillas();
 
   setTimeout(() => {
     iniciarTemporizador();
-    nuevaPalabra();
     ocultarPalabras();
     mostrarInterfaz();
   }, cuentaAtras);
@@ -77,6 +78,11 @@ function pintarCasillas() {
       casilla.appendChild(numero);
       casilla.appendChild(palabra);
 
+      casilla.addEventListener("click", (e) => {
+        let seleccionada = palabra.innerText;
+
+      });
+
       filaCasillas.appendChild(casilla);
 
     }
@@ -102,6 +108,5 @@ function ocultarPalabras() {
 
 
 function mostrarInterfaz() {
-
-
+  contenedorAcciones.classList.remove("escondida");
 }
