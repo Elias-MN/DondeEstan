@@ -85,7 +85,7 @@ function comenzarJuego() {
   }, 1000);
 
   setTimeout(() => {
-    mensajeInicialElement.classList.add("escondida");
+    mensajeInicialElement.classList.add("oculta");
     clearInterval(intervaloInicial);
     iniciarTemporizador();
     ocultarPalabras();
