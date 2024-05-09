@@ -113,6 +113,16 @@ main{
   background-image: repeating-radial-gradient(#5af262, #a9ffaf);
 }
 
+#mensajeInicial{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#mensajeInicial p{
+  font-size: 18px;
+}
+
 @media only screen and (max-width: 600px) {
   .filas {
     flex-direction: column;

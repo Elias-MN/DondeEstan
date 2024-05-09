@@ -14,6 +14,8 @@ const segundosElement = document.getElementById("segundos");
 const adivinarElement = document.getElementById("adivinar");
 const contenedorCasillas = document.getElementById("palabras");
 const contenedorAcciones = document.getElementById("acciones");
+const cuentaAtrasInicial = document.getElementById("cuentaAtras");
+const mensajeInicialElement = document.getElementById("mensajeInicial");
 
 const segundosModoFacil = 120;
 const segundosModoDificil = 50;
@@ -26,6 +28,7 @@ let intervaloTiempo;
 let arrayAleatorio;
 let arrayMezclado;
 let palabrasAux = [];
+let segundosIniciales;
 
 menuButton.addEventListener("click", () => {
   escenaFinal.classList.add("oculta");
@@ -34,6 +37,9 @@ menuButton.addEventListener("click", () => {
 
 comenzarButton.addEventListener("click", () => {
   cuentaAtras = 10000;
+  segundosIniciales = cuentaAtras / 1000;
+  cuentaAtrasInicial.innerHTML = segundosIniciales;
+
   segundosActuales = segundosModoFacil;
   segundosElement.innerHTML = segundosModoFacil;
   comenzarJuego();
@@ -41,6 +47,9 @@ comenzarButton.addEventListener("click", () => {
 
 comenzarDificilButton.addEventListener("click", () => {
   cuentaAtras = 5000;
+  segundosIniciales = cuentaAtras / 1000;
+  cuentaAtrasInicial.innerHTML = segundosIniciales;
+
   segundosActuales = segundosModoDificil;
   segundosElement.innerHTML = segundosModoDificil;
   comenzarJuego();
@@ -70,7 +79,14 @@ function comenzarJuego() {
   nuevaPalabra();
   pintarCasillas();
 
+  let intervaloInicial = setInterval(() => {
+    segundosIniciales = segundosIniciales - 1;
+    cuentaAtrasInicial.innerHTML = segundosIniciales;
+  }, 1000);
+
   setTimeout(() => {
+    mensajeInicialElement.classList.add("escondida");
+    clearInterval(intervaloInicial);
     iniciarTemporizador();
     ocultarPalabras();
     mostrarInterfaz();
