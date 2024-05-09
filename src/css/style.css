@@ -124,7 +124,7 @@ main{
 }
 
 #escenaJuego{
-  min-height: -webkit-fill-available;
+  height: 100svh;
 }
 
 @media only screen and (max-width: 600px) {
