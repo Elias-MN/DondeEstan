@@ -6,7 +6,8 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <link rel=stylesheet href=./src/css/style.css>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script src=./src/js/index.js defer></script>
+  <script type="module" src=./src/js/index.mjs defer></script>
+  <script type="module" src="./src/js/constants.mjs"></script>
   <title>¿Donde Están?</title>
 </head>
 
@@ -14,7 +15,10 @@
   <main>
 
     <div id="escenaMenuInicial">
-      <button id="comenzar" class="customButton">Empezar</button>
+      <h1>¿Dónde están?</h1>
+      <h3>Elige la dificultad del juego</h3>
+      <button id="comenzar" class="customButton">Modo fácil</button>
+      <button id="comenzarDificil" class="customButton">Modo difícil</button>
     </div>
 
     <div class="oculta" id="escenaJuego">
@@ -29,6 +33,11 @@
         </div>
 
       </div>
+    </div>
+
+    <div id="escenaFinal" class="oculta">
+      <h1 id="textoFinal">¡Has ganado!</h1>
+      <button id="menu" class="customButton">Volver al menú</button>
     </div>
 
   </main>

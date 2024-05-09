@@ -108,3 +108,21 @@ main{
 .escondida{
   visibility: hidden;
 }
+
+.acertada{
+  background-image: repeating-radial-gradient(#5af262, #a9ffaf);
+}
+
+@media only screen and (max-width: 600px) {
+  .filas {
+    flex-direction: column;
+  }
+  .casilla {
+    width: 100%;
+    height: 2rem;
+  }
+
+  .casilla p {
+    font-size: 8px;
+  }
+}
