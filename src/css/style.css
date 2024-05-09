@@ -123,6 +123,10 @@ main{
   font-size: 18px;
 }
 
+#escenaJuego{
+  height: 100dvh;
+}
+
 @media only screen and (max-width: 600px) {
   .filas {
     flex-direction: column;
